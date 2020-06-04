@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crusher : MonoBehaviour
 {
-    public GameObject [] prefab;
+    public GameObject[] prefab;
 
     void Start()
     {
@@ -18,8 +18,11 @@ public class Crusher : MonoBehaviour
 
     void Crush()
     {
-        GameObject obj = Instantiate(prefab[Random.Range(0, 6)]);
-        obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
-        obj.transform.localScale = Vector3.one * Random.Range(0.7f, 1f);
+        if (SingletonClass.instance.IS_CRUSHING)
+        {
+            GameObject obj = Instantiate(prefab[Random.Range(0, 6)]);
+            obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
+            obj.transform.localScale = Vector3.one * Random.Range(0.7f, 1f);
+        }
     }
 }
