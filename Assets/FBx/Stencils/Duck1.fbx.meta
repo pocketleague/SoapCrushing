@@ -1,35 +1,8 @@
 fileFormatVersion: 2
-guid: 78fc70fd10e5644be95f997243bdae4d
+guid: 5b0548d09b9d24cde9dd87fbc5e2f7dc
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable:
-  - first:
-      74: -1422011007694221501
-    second: Armature|ArmatureAction.001
-  - first:
-      74: -6946218726838091253
-    second: Armature|soapAction.004
-  - first:
-      74: -2967773181734517648
-    second: Armature|soapAction.005
-  - first:
-      74: -6194386587001667949
-    second: Armature|soapAction.006
-  - first:
-      74: 5313498075589096388
-    second: Armature|soapAction.007
-  - first:
-      74: -8763680439239844532
-    second: soap.004|soapAction.004
-  - first:
-      74: -8506493779348271273
-    second: soap.004|soapAction.005
-  - first:
-      74: -5906122163301748845
-    second: soap.004|soapAction.006
-  - first:
-      74: -7809663664453011191
-    second: soap.004|soapAction.007
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -61,7 +34,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 0.4
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -108,13 +81,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.003
+    globalScale: 0.004
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

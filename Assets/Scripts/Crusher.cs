@@ -12,7 +12,6 @@ public class Crusher : MonoBehaviour
 
     void Start()
     {
-
         InvokeRepeating("Crush", 1, .01f);
     }
 
@@ -20,8 +19,8 @@ public class Crusher : MonoBehaviour
     {
         if (SingletonClass.instance.IS_CRUSHING)
         {
-//            GameObject obj = Instantiate(prefab[Random.Range(0, 6)]);
-            GameObject obj = Instantiate(prefab[0]);
+            GameObject obj = Instantiate(prefab[Random.Range(0, 6)]);
+    //        GameObject obj = Instantiate(prefab[0]);
 
             obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
           //  obj.transform.localScale = Vector3.one * Random.Range(0.7f, 1f);
@@ -30,11 +29,17 @@ public class Crusher : MonoBehaviour
 
     public void ChangeMaterialRed()
     {
-        prefab[1].GetComponentInChildren<MeshRenderer>().material = mat_red;
+        for (int i = 0; i < prefab.Length; i++)
+        {
+            prefab[i].GetComponentInChildren<MeshRenderer>().material = mat_red;
+        }
     }
 
     public void ChangeMaterialBlue()
     {
-        prefab[1].GetComponentInChildren<MeshRenderer>().material = mat_blue;
+        for (int i = 0; i < prefab.Length; i++)
+        {
+            prefab[i].GetComponentInChildren<MeshRenderer>().material = mat_blue;
+        }
     }
 }
