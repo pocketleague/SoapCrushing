@@ -20,7 +20,7 @@ public class Crusher : MonoBehaviour
     {
         if (SingletonClass.instance.IS_CRUSHING)
         {
-    //        GameObject obj = Instantiate(prefab[Random.Range(0, 6)]);
+      //      GameObject obj = Instantiate(prefab[Random.Range(0, 6)]);
             GameObject obj = Instantiate(prefab[0]);
 
             obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
