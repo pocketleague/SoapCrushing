@@ -7,7 +7,7 @@ public class HandMovement : MonoBehaviour
     private Vector3 offset;
     public Vector3 startPos;
 
-    public Animator animator;
+    public Animator animator_hand, animator_soap;
 
     void Start()
     {
@@ -27,10 +27,17 @@ public class HandMovement : MonoBehaviour
         Debug.Log("ddddd");
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-        SingletonClass.instance.IS_CRUSHING = true;
-
-        animator.SetBool("crushing", true);
+        animator_hand.SetBool("crushing", true);
+        animator_soap.SetBool("crushing", true);
+        Invoke("Delay", 1f);
+       
         // }
+    }
+
+    void Delay()
+    {
+        SingletonClass.instance.IS_CRUSHING = true;
+        
     }
 
     void OnMouseDrag()
@@ -49,8 +56,10 @@ public class HandMovement : MonoBehaviour
 
     void OnMouseUp()
     {
+        CancelInvoke("Delay");
         SingletonClass.instance.IS_CRUSHING = false;
-        animator.SetBool("crushing", false);
+        animator_hand.SetBool("crushing", false);
+        animator_soap.SetBool("crushing", false);
 
     }
 }
