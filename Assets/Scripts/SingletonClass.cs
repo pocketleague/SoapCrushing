@@ -7,6 +7,9 @@ public class SingletonClass : MonoBehaviour
     public static SingletonClass instance = null;
     public bool IS_CRUSHING;
 
+    public GameObject CURRENT_LEVEL;
+    public int LEVEL;
+
     void Awake()
     {
         //Check if instance already exists
