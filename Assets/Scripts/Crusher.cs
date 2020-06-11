@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Crusher : MonoBehaviour
 {
     public GameObject[] prefab;
+    public GameObject particle_crush;
+
     public Material mat_red, mat_blue;
 
     public float crushRate;
@@ -14,15 +16,16 @@ public class Crusher : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Crush", 1, crushRate);
+    //    InvokeRepeating("CrushParticles", 1, .1f);
     }
 
     void Crush()
     {
         if (SingletonClass.instance.IS_CRUSHING)
         {
-            GameObject obj = Instantiate(prefab[Random.Range(0, 6)]);
-        //   GameObject obj = Instantiate(prefab[0]);
-
+         //   GameObject obj = Instantiate(prefab[Random.Range(0, prefab.Length)]);
+            GameObject obj = Instantiate(prefab[0]);
+          
             obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
             obj.transform.parent = SingletonClass.instance.CURRENT_LEVEL.transform;
 
@@ -30,6 +33,13 @@ public class Crusher : MonoBehaviour
         }
     }
 
+    void CrushParticles()
+    {
+        if (SingletonClass.instance.IS_CRUSHING)
+        {
+            Instantiate(particle_crush, transform.position, Quaternion.identity);
+        }
+    }
     public void ChangeMaterialRed()
     {
         for (int i = 0; i < prefab.Length; i++)
