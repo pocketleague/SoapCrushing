@@ -7,7 +7,7 @@ public class SingletonClass : MonoBehaviour
     public static SingletonClass instance = null;
     public bool IS_CRUSHING;
 
-    public GameObject CURRENT_LEVEL;
+    public GameObject CURRENT_LEVEL, CURRENT_SOAP;
     public int LEVEL;
 
     void Awake()

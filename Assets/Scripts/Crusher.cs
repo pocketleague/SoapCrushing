@@ -12,7 +12,7 @@ public class Crusher : MonoBehaviour
     public Material mat_red, mat_blue;
 
     public float crushRate;
-
+    
     void Start()
     {
         InvokeRepeating("Crush", 1, crushRate);
@@ -23,13 +23,29 @@ public class Crusher : MonoBehaviour
     {
         if (SingletonClass.instance.IS_CRUSHING)
         {
-         //   GameObject obj = Instantiate(prefab[Random.Range(0, prefab.Length)]);
-            GameObject obj = Instantiate(prefab[0]);
-          
-            obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
-            obj.transform.parent = SingletonClass.instance.CURRENT_LEVEL.transform;
+            //   GameObject obj = Instantiate(prefab[Random.Range(0, prefab.Length)]);
 
-          //  obj.transform.localScale = Vector3.one * Random.Range(0.7f, 1f);
+            if (SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count > 0)
+            {
+                float z = ((float)SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count) / 1500;
+                Debug.Log("zzzzz " + z);
+                SingletonClass.instance.CURRENT_SOAP.transform.localScale = new Vector3(SingletonClass.instance.CURRENT_SOAP.transform.localScale.x, SingletonClass.instance.CURRENT_SOAP.transform.localScale.y, z);
+
+                GameObject obj = Instantiate(prefab[0]);
+
+                obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
+                obj.transform.parent = SingletonClass.instance.CURRENT_LEVEL.transform;
+
+                SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count--;
+
+            }
+            else
+            {
+                Debug.Log("Soap is over");
+            }
+         
+          
+            //  obj.transform.localScale = Vector3.one * Random.Range(0.7f, 1f);
         }
     }
 
@@ -44,7 +60,7 @@ public class Crusher : MonoBehaviour
     {
         for (int i = 0; i < prefab.Length; i++)
         {
-            prefab[i].GetComponentInChildren<MeshRenderer>().material = mat_red;
+            prefab[i].GetComponentInChildren<MeshRenderer>().sharedMaterial = mat_red;
         }
     }
 
@@ -52,7 +68,15 @@ public class Crusher : MonoBehaviour
     {
         for (int i = 0; i < prefab.Length; i++)
         {
-            prefab[i].GetComponentInChildren<MeshRenderer>().material = mat_blue;
+            prefab[i].GetComponentInChildren<MeshRenderer>().sharedMaterial = mat_blue;
+        }
+    }
+
+    public void ChangeMaterial(Material mat)
+    {
+        for (int i = 0; i < prefab.Length; i++)
+        {
+            prefab[i].GetComponentInChildren<MeshRenderer>().sharedMaterial = mat;
         }
     }
 }
