@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public Vector3 cam1_pos;
 
     public Material[] mats;
+    public GameObject btn_cook, btn_next;
 
 
     void Start()
@@ -30,8 +32,12 @@ public class LevelManager : MonoBehaviour
             flame.SetActive(true);
 
             StartCoroutine(CreateMold());
+        }
 
-           
+        if (SingletonClass.instance.START_CONFETTI)
+        {
+            SingletonClass.instance.START_CONFETTI = false;
+            ShowConfetti();
         }
     }
 
@@ -48,7 +54,7 @@ public class LevelManager : MonoBehaviour
 
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<Animator>().SetBool("flip", true);
 
-
+        yield return new WaitForSeconds(2);
     }
 
     public void NextLevel()
@@ -64,7 +70,16 @@ public class LevelManager : MonoBehaviour
         SingletonClass.instance.LEVEL++;
         SingletonClass.instance.CURRENT_LEVEL = Instantiate(levels[SingletonClass.instance.LEVEL-1], transform);
 
-    //    SelectSoap(0);
+        cam1.SetActive(true);
+        cam2.SetActive(false);
+        cam1.GetComponent<CinemachineVirtualCamera>().enabled = true;
+        cam1.transform.parent = null;
+        cam1.transform.position = cam1_pos;
+
+        btn_cook.SetActive(true);
+        btn_next.SetActive(false);
+
+        //    SelectSoap(0);
     }
 
     public void Cook()
@@ -82,10 +97,15 @@ public class LevelManager : MonoBehaviour
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().hand.SetActive(false);
 
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<Animator>().SetBool("moveCam", true);
-        //gas.SetActive(true);
-        //pan.SetActive(true);
-        //table.SetActive(false);
+        
+        btn_cook.SetActive(false);
+    }
 
+    void ShowConfetti()
+    {
+        SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().confetti.SetActive(true);
+        btn_cook.SetActive(false);
+        btn_next.SetActive(true);
 
 
     }

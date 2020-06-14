@@ -27,7 +27,8 @@ public class HandMovement : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!EventSystem.current.IsPointerOverGameObject(0))
+
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
             Debug.Log("ddddd");
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -52,7 +53,7 @@ public class HandMovement : MonoBehaviour
     void OnMouseDrag()
     {
 
-        if (!EventSystem.current.IsPointerOverGameObject(0))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
             Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
@@ -73,7 +74,7 @@ public class HandMovement : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (!EventSystem.current.IsPointerOverGameObject(0))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
             CancelInvoke("Delay");
             SingletonClass.instance.IS_CRUSHING = false;

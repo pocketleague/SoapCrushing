@@ -6,7 +6,7 @@ public class SingletonClass : MonoBehaviour
 {
     public static SingletonClass instance = null;
     public bool IS_CRUSHING;
-    public bool START_COOKING;
+    public bool START_COOKING, START_CONFETTI;
 
     public GameObject CURRENT_LEVEL, CURRENT_SOAP;
     public int LEVEL;

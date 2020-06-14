@@ -34,7 +34,7 @@ public class Crusher : MonoBehaviour
                     GameObject obj = Instantiate(prefab[0]);
 
                     obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
-                    obj.transform.parent = SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().stencil.transform;
+                    obj.transform.parent = SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().stencil.transform.GetChild(0);
 
                     SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count--;
 
