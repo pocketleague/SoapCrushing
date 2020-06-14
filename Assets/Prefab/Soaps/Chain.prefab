@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 3f82feacc15a24ef2ac56283c6b45df3, type: 2}
-  soap_particle_count: 1000
+  soap_particle_count: 1500

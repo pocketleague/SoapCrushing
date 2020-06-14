@@ -10,6 +10,10 @@ public class HandMovement : MonoBehaviour
     public Animator animator_hand, animator_soap;
     public Transform soapParent;
 
+    private float waitTime;
+
+    public AudioClip [] clips;
+
     void Start()
     {
         startPos = transform.position;
@@ -54,10 +58,18 @@ public class HandMovement : MonoBehaviour
             Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
             transform.position = new Vector3(cursorPosition.x * 1f, gameObject.transform.position.y, cursorPosition.z);
 
+            waitTime += Time.deltaTime;
+
+            if (waitTime > 0.2f)
+            {
+                waitTime = 0;
+                GetComponent<AudioSource>().clip = clips[Random.Range(0, clips.Length)];
+                GetComponent<AudioSource>().Play();
+            }
         }
-
-
     }
+
+
 
     void OnMouseUp()
     {

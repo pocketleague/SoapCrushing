@@ -24,27 +24,29 @@ public class Crusher : MonoBehaviour
         if (SingletonClass.instance.IS_CRUSHING)
         {
             //   GameObject obj = Instantiate(prefab[Random.Range(0, prefab.Length)]);
-
-            if (SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count > 0)
+            if (SingletonClass.instance.CURRENT_SOAP != null)
             {
-                float z = ((float)SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count) / 1500;
-                Debug.Log("zzzzz " + z);
-                SingletonClass.instance.CURRENT_SOAP.transform.localScale = new Vector3(SingletonClass.instance.CURRENT_SOAP.transform.localScale.x, SingletonClass.instance.CURRENT_SOAP.transform.localScale.y, z);
+                if (SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count > 0)
+                {
+                    float z = ((float)SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count) / 1500;
+                    SingletonClass.instance.CURRENT_SOAP.transform.localScale = new Vector3(SingletonClass.instance.CURRENT_SOAP.transform.localScale.x, SingletonClass.instance.CURRENT_SOAP.transform.localScale.y, z);
 
-                GameObject obj = Instantiate(prefab[0]);
+                    GameObject obj = Instantiate(prefab[0]);
 
-                obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
-                obj.transform.parent = SingletonClass.instance.CURRENT_LEVEL.transform;
+                    obj.transform.localPosition = Random.insideUnitSphere * 0.2f + transform.position;
+                    obj.transform.parent = SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().stencil.transform;
 
-                SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count--;
+                    SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count--;
+
+                }
+                else
+                {
+                    Debug.Log("Soap is over");
+                }
 
             }
-            else
-            {
-                Debug.Log("Soap is over");
-            }
-         
-          
+
+
             //  obj.transform.localScale = Vector3.one * Random.Range(0.7f, 1f);
         }
     }

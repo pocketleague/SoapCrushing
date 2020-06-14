@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: f55ea6a56b255480db5ad5c0f52407d8, type: 2}
-  soap_particle_count: 1000
+  soap_particle_count: 1500
 --- !u!1 &4231373340467155878
 GameObject:
   m_ObjectHideFlags: 0

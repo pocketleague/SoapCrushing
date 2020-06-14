@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("yyyyyy");
             //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             //RaycastHit hit = Physics.Raycast(mousePos, Vector3.up, 100);
@@ -30,13 +29,10 @@ public class GameManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                Debug.Log("uuuuuu");
 
                 // whatever tag you are looking for on your game object
                 if (hit.collider.tag == "hand")
                 {
-                    Debug.Log("iiiiiii");
-
                     Debug.Log("---> Hit: ");
                 }
             }
