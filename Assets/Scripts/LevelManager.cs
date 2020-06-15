@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject [] levels;
     public GameObject chain, cones, plain, roll;
-    public GameObject gas, flame, pan, table;
+    public GameObject gas, flame, pan, table, steam;
     public GameObject cam1, cam2;
 
     public Vector3 cam1_pos;
@@ -31,11 +31,13 @@ public class LevelManager : MonoBehaviour
             cam2.SetActive(true);
             flame.SetActive(true);
 
+
             StartCoroutine(CreateMold());
         }
 
         if (SingletonClass.instance.START_CONFETTI)
         {
+            SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().steam.SetActive(false);
             SingletonClass.instance.START_CONFETTI = false;
             ShowConfetti();
         }
@@ -44,6 +46,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator CreateMold()
     {
         yield return new WaitForSeconds(1);
+        SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().steam.SetActive(true);
 
         for (int i = 0; i < mats.Length; i++)
         {
@@ -103,6 +106,7 @@ public class LevelManager : MonoBehaviour
 
     void ShowConfetti()
     {
+
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().confetti.SetActive(true);
         btn_cook.SetActive(false);
         btn_next.SetActive(true);

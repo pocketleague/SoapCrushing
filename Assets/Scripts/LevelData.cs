@@ -10,6 +10,7 @@ public class LevelData : MonoBehaviour
     public GameObject hand;
     public GameObject stencil;
     public GameObject confetti;
+    public GameObject steam;
 
     public void ActivateCam2()
     {
