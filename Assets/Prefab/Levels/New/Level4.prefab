@@ -1684,6 +1684,11 @@ PrefabInstance:
       propertyPath: soap_particle_count
       value: 3000
       objectReference: {fileID: 0}
+    - target: {fileID: 1484553281531501929, guid: 823ea0ccdf4a740b3be4266d9e857b59,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52191b251ff3d4f03bc0a89bddb46957, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 823ea0ccdf4a740b3be4266d9e857b59, type: 3}
 --- !u!1 &6082950250894218304 stripped

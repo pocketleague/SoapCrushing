@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public GameObject [] levels;
     public GameObject chain, cones, plain, roll;
     public GameObject gas, flame, pan, table, steam;
-    public GameObject cam1, cam2;
+    public GameObject cam1, cam2, cam3;
 
     public Vector3 cam1_pos;
 
@@ -40,6 +40,9 @@ public class LevelManager : MonoBehaviour
             SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().steam.SetActive(false);
             SingletonClass.instance.START_CONFETTI = false;
             ShowConfetti();
+
+            cam2.SetActive(false);
+            cam3.SetActive(true);
         }
     }
 
@@ -75,6 +78,8 @@ public class LevelManager : MonoBehaviour
 
         cam1.SetActive(true);
         cam2.SetActive(false);
+        cam3.SetActive(false);
+
         cam1.GetComponent<CinemachineVirtualCamera>().enabled = true;
         cam1.transform.parent = null;
         cam1.transform.position = cam1_pos;
