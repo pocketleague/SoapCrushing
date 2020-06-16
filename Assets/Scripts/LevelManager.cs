@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
             cam2.SetActive(true);
             flame.SetActive(true);
 
+            SingletonClass.instance.CURRENT_LEVEL.GetComponent<AudioSource>().enabled = true;
 
             StartCoroutine(CreateMold());
         }
@@ -38,8 +39,10 @@ public class LevelManager : MonoBehaviour
         if (SingletonClass.instance.START_CONFETTI)
         {
             SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().steam.SetActive(false);
+
             SingletonClass.instance.START_CONFETTI = false;
             ShowConfetti();
+
 
             cam2.SetActive(false);
             cam3.SetActive(true);
@@ -49,7 +52,9 @@ public class LevelManager : MonoBehaviour
     IEnumerator CreateMold()
     {
         yield return new WaitForSeconds(1);
-        SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().steam.SetActive(true);
+
+
+        SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().steam.SetActive(false);
 
         for (int i = 0; i < mats.Length; i++)
         {
@@ -58,9 +63,16 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().bubbles.SetActive(true);
+
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<Animator>().SetBool("flip", true);
 
-        yield return new WaitForSeconds(2);
+        SingletonClass.instance.CURRENT_LEVEL.GetComponent<AudioSource>().enabled = false;
+
+        yield return new WaitForSeconds(4);
+
+        SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().bubbles.SetActive(false);
+
     }
 
     public void NextLevel()

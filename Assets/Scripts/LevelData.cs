@@ -11,6 +11,8 @@ public class LevelData : MonoBehaviour
     public GameObject stencil;
     public GameObject confetti;
     public GameObject steam;
+    public GameObject bubbles;
+
 
     public void ActivateCam2()
     {
