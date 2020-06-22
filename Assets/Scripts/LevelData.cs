@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class LevelData : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class LevelData : MonoBehaviour
     public GameObject confetti;
     public GameObject steam;
     public GameObject bubbles;
-
+    public Image fillingBar;
 
     public void ActivateCam2()
     {

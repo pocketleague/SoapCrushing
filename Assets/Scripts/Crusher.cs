@@ -29,6 +29,8 @@ public class Crusher : MonoBehaviour
                 if (SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count > 0)
                 {
                     float z = ((float)SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_count) / (float)SingletonClass.instance.CURRENT_SOAP.GetComponent<SoapData>().soap_particle_total;
+
+                    SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().fillingBar.fillAmount = z;
                     SingletonClass.instance.CURRENT_SOAP.transform.localScale = new Vector3(SingletonClass.instance.CURRENT_SOAP.transform.localScale.x, SingletonClass.instance.CURRENT_SOAP.transform.localScale.y, z);
 
                     GameObject obj = Instantiate(prefab[0]);

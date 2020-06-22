@@ -138,7 +138,8 @@ public class LevelManager : MonoBehaviour
             Destroy(SingletonClass.instance.CURRENT_SOAP);
         }
 
-     
+
+        SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().fillingBar.fillAmount = 1;
 
         SingletonClass.instance.CURRENT_SOAP = Instantiate(SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().Soaps[id], SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().soapSpawnPos.transform.position, Quaternion.Euler(-90f, 0f, 0f), SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().soapSpawnPos.transform);
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().crusher.ChangeMaterial(SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().Soaps[id].GetComponentInChildren<MeshRenderer>().sharedMaterial);
