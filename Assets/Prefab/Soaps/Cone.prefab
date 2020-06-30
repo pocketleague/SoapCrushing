@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 119896830}
   m_Layer: 0
   m_Name: Cone
-  m_TagString: Untagged
+  m_TagString: soap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: f55ea6a56b255480db5ad5c0f52407d8, type: 2}
   soap_particle_count: 1500
+  soap_particle_total: 0
 --- !u!1 &4231373340467155878
 GameObject:
   m_ObjectHideFlags: 0

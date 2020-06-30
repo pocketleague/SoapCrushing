@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1550183201}
   m_Layer: 0
   m_Name: Plain
-  m_TagString: Untagged
+  m_TagString: soap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,3 +160,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 0e9b32d677ed1413eb8fb5c85934b077, type: 2}
   soap_particle_count: 1500
+  soap_particle_total: 0

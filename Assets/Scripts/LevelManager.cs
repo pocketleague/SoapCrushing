@@ -86,7 +86,7 @@ public class LevelManager : MonoBehaviour
             Destroy(SingletonClass.instance.CURRENT_LEVEL);
 
         SingletonClass.instance.LEVEL++;
-        SingletonClass.instance.CURRENT_LEVEL = Instantiate(levels[SingletonClass.instance.LEVEL-1], transform);
+        SingletonClass.instance.CURRENT_LEVEL = Instantiate(levels[(SingletonClass.instance.LEVEL-1) % 4], transform);
 
         cam1.SetActive(true);
         cam2.SetActive(false);
@@ -104,6 +104,7 @@ public class LevelManager : MonoBehaviour
 
     public void Cook()
     {
+
         cam1.transform.parent = SingletonClass.instance.CURRENT_LEVEL.transform;
 
         for (int i = 0; i < SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().Soaps.Length; i++)
@@ -115,6 +116,8 @@ public class LevelManager : MonoBehaviour
         }
 
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().hand.SetActive(false);
+        SingletonClass.instance.IS_CRUSHING = false;
+        Debug.Log("gggggggggg activated deactivated");
 
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<Animator>().SetBool("moveCam", true);
         
@@ -138,13 +141,15 @@ public class LevelManager : MonoBehaviour
             Destroy(SingletonClass.instance.CURRENT_SOAP);
         }
 
+        //if ()
+        //{
 
+        //}
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().fillingBar.fillAmount = 1;
 
         SingletonClass.instance.CURRENT_SOAP = Instantiate(SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().Soaps[id], SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().soapSpawnPos.transform.position, Quaternion.Euler(-90f, 0f, 0f), SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().soapSpawnPos.transform);
         SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().crusher.ChangeMaterial(SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().Soaps[id].GetComponentInChildren<MeshRenderer>().sharedMaterial);
       //  SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().crusher.ChangeMaterial(SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().Soaps[id].GetComponent<SoapData>().mat);
-
 
         Destroy(SingletonClass.instance.CURRENT_LEVEL.GetComponent<LevelData>().Soaps[id]);
     }

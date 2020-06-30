@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1082532564}
   m_Layer: 0
   m_Name: Roll
-  m_TagString: Untagged
+  m_TagString: soap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 7abaa4100a3474c0da6ef079bb47a4eb, type: 2}
   soap_particle_count: 1500
+  soap_particle_total: 0
 --- !u!1 &7969822774783505729
 GameObject:
   m_ObjectHideFlags: 0

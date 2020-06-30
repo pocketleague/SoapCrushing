@@ -886,7 +886,7 @@ BoxCollider:
   m_GameObject: {fileID: 6913502160514735696}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 50, y: 1, z: 50}
   m_Center: {x: 0, y: 2, z: 0}
@@ -2384,26 +2384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7614153539364373973}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 2d52db38d2fec4ad0bc1de80439b2151,
-        type: 3}
-      propertyPath: m_Name
-      value: Smiley1 stencil_separate
-      objectReference: {fileID: 0}
-    - target: {fileID: -8711014439449990672, guid: 2d52db38d2fec4ad0bc1de80439b2151,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 17eb405bb6f8c4c469a19cd44590211e, type: 2}
-    - target: {fileID: -6915303703036935842, guid: 2d52db38d2fec4ad0bc1de80439b2151,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
-    - target: {fileID: -6362105232641171368, guid: 2d52db38d2fec4ad0bc1de80439b2151,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
     - target: {fileID: -4216859302048453862, guid: 2d52db38d2fec4ad0bc1de80439b2151,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2474,6 +2454,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.00015122037
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2d52db38d2fec4ad0bc1de80439b2151,
+        type: 3}
+      propertyPath: m_Name
+      value: Smiley1 stencil_separate
+      objectReference: {fileID: 0}
+    - target: {fileID: -8711014439449990672, guid: 2d52db38d2fec4ad0bc1de80439b2151,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17eb405bb6f8c4c469a19cd44590211e, type: 2}
+    - target: {fileID: -6915303703036935842, guid: 2d52db38d2fec4ad0bc1de80439b2151,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
+    - target: {fileID: -6362105232641171368, guid: 2d52db38d2fec4ad0bc1de80439b2151,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
     - target: {fileID: -2032037034661658697, guid: 2d52db38d2fec4ad0bc1de80439b2151,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2584,26 +2584,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5030431053180335887}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
-        type: 3}
-      propertyPath: m_Name
-      value: Smiley1 Shape_separate
-      objectReference: {fileID: 0}
-    - target: {fileID: -6915303703036935842, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
-    - target: {fileID: -6413408618107904768, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c48fbb9cfa51c4f3ea079eb786e501cd, type: 2}
-    - target: {fileID: -6362105232641171368, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
     - target: {fileID: -4216859302048453862, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2674,6 +2654,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.00014913976
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
+        type: 3}
+      propertyPath: m_Name
+      value: Smiley1 Shape_separate
+      objectReference: {fileID: 0}
+    - target: {fileID: -6915303703036935842, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
+    - target: {fileID: -6413408618107904768, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c48fbb9cfa51c4f3ea079eb786e501cd, type: 2}
+    - target: {fileID: -6362105232641171368, guid: 1f9b8d1024a6045a2bc075c3809fc5bb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d224f07e47ee547edb526a091041aed7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9b8d1024a6045a2bc075c3809fc5bb, type: 3}
 --- !u!4 &1229570422838719305 stripped
