@@ -237,7 +237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2095487812
 RectTransform:
   m_ObjectHideFlags: 0
@@ -504,11 +504,10 @@ MonoBehaviour:
   animator_soap: {fileID: 5051488210538238769}
   soapParent: {fileID: 1535847637507508708}
   clips:
-  - {fileID: 8300000, guid: 346265fe5123847c588cb99a7673e939, type: 3}
-  - {fileID: 8300000, guid: 596044292f5ba4733a851e5c541649e9, type: 3}
-  - {fileID: 8300000, guid: f81b1b5123a7b43f0bdde11c804cb279, type: 3}
-  - {fileID: 8300000, guid: bc22d58615dbc40199981cd1e6fb4a83, type: 3}
-  - {fileID: 8300000, guid: 19ede6b5eada64a09b26a32cd8facf23, type: 3}
+  - {fileID: 8300000, guid: 14f035d1584024e2da9e181323f17ea8, type: 3}
+  - {fileID: 8300000, guid: 1c1d3cb4b0919496688d8dd0aeab784e, type: 3}
+  - {fileID: 8300000, guid: 69e3392253ba84b20afd98bcf4994e69, type: 3}
+  - {fileID: 8300000, guid: 782a6dba9f8e84a809a1ab46f744f18e, type: 3}
 --- !u!1 &2218911059850344448
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +730,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e5cf0c2bfca0d3f47a4fa46f567b74bf, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

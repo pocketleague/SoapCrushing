@@ -61,7 +61,7 @@ public class HandMovement : MonoBehaviour
 
             waitTime += Time.deltaTime;
 
-                if (waitTime > 0.2f)
+                if (waitTime > 1.0f)
             {
                 waitTime = 0;
                 GetComponent<AudioSource>().clip = clips[Random.Range(0, clips.Length)];
